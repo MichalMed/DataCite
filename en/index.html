@@ -1,0 +1,3970 @@
+<!DOCTYPE html>
+  
+  
+  <html>
+    <head>
+      <meta charset="utf-8" />
+      <title>DataCite</title>
+      <meta name="color-scheme" content="light dark">
+      <script type="application/ld+json">
+        {
+  "@id": "",
+  "@type": [
+    "http://purl.org/dc/terms/Standard",
+    "http://www.w3.org/2002/07/owl#Ontology"
+  ],
+  "http://purl.org/dc/terms/title": [
+    {
+      "@language": "en",
+      "@value": "DataCite"
+    }
+  ],
+  "https://w3id.org/dsv#artefact": [
+    {
+      "@type": [
+        "http://www.w3.org/ns/dx/prof/ResourceDescriptor"
+      ],
+      "http://www.w3.org/ns/dx/prof/hasArtifact": [
+        {
+          "@id": "./model.owl.ttl"
+        }
+      ],
+      "http://www.w3.org/ns/dx/prof/hasRole": [
+        {
+          "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary"
+        }
+      ]
+    },
+    {
+      "@type": [
+        "http://www.w3.org/ns/dx/prof/ResourceDescriptor"
+      ],
+      "http://www.w3.org/ns/dx/prof/hasArtifact": [
+        {
+          "@id": "./dsv.ttl"
+        }
+      ],
+      "http://www.w3.org/ns/dx/prof/hasRole": [
+        {
+          "@id": "http://www.w3.org/ns/dx/prof/role/schema"
+        }
+      ]
+    },
+    {
+      "@type": [
+        "http://www.w3.org/ns/dx/prof/ResourceDescriptor"
+      ],
+      "http://www.w3.org/ns/dx/prof/hasArtifact": [
+        {
+          "@id": ""
+        }
+      ],
+      "http://www.w3.org/ns/dx/prof/hasRole": [
+        {
+          "@id": "http://www.w3.org/ns/dx/prof/role/specification"
+        }
+      ]
+    }
+  ],
+  "http://purl.org/dc/terms/references": [
+    []
+  ]
+}
+      </script>
+      <script
+        src="https://www.w3.org/Tools/respec/respec-w3c"
+        class="remove"
+        defer
+      ></script>
+      <script class="remove">
+        // All config options at https://respec.org/docs/
+        var respecConfig = {
+          specStatus: "unofficial",
+          editors: [{ name: "Dataspecer", url: "https://dataspecer.com" }],
+          //github: "some-org/mySpec",
+          shortName: "todo",
+          //xref: "web-platform",
+          //group: "my-working-group",
+        };
+      </script>
+          <style>
+      .figure img, .sidefigure img, figure img, .figure object, .sidefigure object, figure object, img, .img {
+      max-width: 100%;
+      margin: auto;
+      height: auto;
+      }
+    </style>
+    </head>
+    <body>
+      <section id="abstract">
+        <p>
+          This file documents
+          <strong>DataCite</strong>.</p>
+      </section>
+
+      <!--<section id="sotd">
+      </section>-->
+
+      <section>
+        <h1>Overview</h1>
+
+          <figure>
+            <img src="./ed1a6600-d680-45fc-befb-3728afbafdf2.svg" alt="alt text 2" />
+            <figcaption>Overview diagram</figcaption>
+          </figure>
+
+        <h2>Classes</h2>
+        This section lists the classes matching the base namespace of this vocabulary.
+
+
+              <section id="Resource">
+              <h4>Resource</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/Resource">https://techlib.cz/vocabulary/datacite/Resource</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Resource</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Root element of a single record. This wrapper element represents root element taken from XML implementation and is not defined in the DataCite DOI standard. RDF also needs a root element.</td>
+                </tr>
+              </table>
+            </section>
+              <section id="Subject">
+              <h4>Subject</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/Subject">https://techlib.cz/vocabulary/datacite/Subject</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Subject</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Subject, keyword, classification code, or key phrase describing the resource.</td>
+                </tr>
+              </table>
+            </section>
+              <section id="Creator">
+              <h4>Creator</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/Creator">https://techlib.cz/vocabulary/datacite/Creator</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Creator</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The main researchers involved in producing the data, or the authors of the publication, in priority order. For instruments this is the manufacturer or developer of the instrument. To supply multiple creators, repeat this property.</td>
+                </tr>
+              </table>
+            </section>
+              <section id="Publisher">
+              <h4>Publisher</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/Publisher">https://techlib.cz/vocabulary/datacite/Publisher</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Publisher</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The name of the entity that holds, archives, publishes, prints, distributes, releases, issues, or produces the resource. This property will be used to formulate the citation, so consider the prominence of the role.</td>
+                </tr>
+              </table>
+            </section>
+              <section id="Contributor">
+              <h4>Contributor</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/Contributor">https://techlib.cz/vocabulary/datacite/Contributor</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Contributor</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>he institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property.
+
+For software, if there is an alternate entity that “holds, archives, publishes, prints, distributes, releases, issues, or produces” the code, use the contributorType “HostingInstitution” for the code repository.
+
+For instruments, if there is an institution responsible for the management of the instrument (for example, the legal owner, the operator, or an institute providing access to the instrument), use the contributorType “HostingInstitution” for the owner of the instrument.</td>
+                </tr>
+              </table>
+            </section>
+              <section id="Date">
+              <h4>Date</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/Date">https://techlib.cz/vocabulary/datacite/Date</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Date</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Different dates relevant to the work.</td>
+                </tr>
+              </table>
+            </section>
+              <section id="Alternate-identifier">
+              <h4>Alternate identifier</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/AlternateIdentifier">https://techlib.cz/vocabulary/datacite/AlternateIdentifier</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Alternate identifier</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>An identifier other than the primary Identifier applied to the resource being registered. This may be any alphanumeric string which is unique within its domain of issue. May be used for local identifiers, a serial number of an instrument or an inventory number. The AlternateIdentifier should be an additional identifier for the same instance of the resource (i.e., same location, same file).</td>
+                </tr>
+              </table>
+            </section>
+              <section id="Related-identifier">
+              <h4>Related identifier</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/RelatedIdentifier">https://techlib.cz/vocabulary/datacite/RelatedIdentifier</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Related identifier</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>dentifiers of related resources. These must be globally unique identifiers.</td>
+                </tr>
+              </table>
+            </section>
+              <section id="Rights">
+              <h4>Rights</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/Rights">https://techlib.cz/vocabulary/datacite/Rights</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Rights</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Any rights information for this resource. The property may be repeated to record complex rights characteristics.</td>
+                </tr>
+              </table>
+            </section>
+              <section id="Description">
+              <h4>Description</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/Description">https://techlib.cz/vocabulary/datacite/Description</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Description</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>All additional information that does not fit in any of the other categories. May be used for technical information or detailed information associated with a scientific instrument.</td>
+                </tr>
+              </table>
+            </section>
+              <section id="GeoLocation">
+              <h4>GeoLocation</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/Geolocation">https://techlib.cz/vocabulary/datacite/Geolocation</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>GeoLocation</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Spatial region or named place where the data was gathered or about which the data is focused.</td>
+                </tr>
+              </table>
+            </section>
+              <section id="Funding-reference">
+              <h4>Funding reference</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/FundingReference">https://techlib.cz/vocabulary/datacite/FundingReference</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Funding reference</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Information about financial support (funding) for the resource being registered.</td>
+                </tr>
+              </table>
+            </section>
+              <section id="Related-item">
+              <h4>Related item</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/RelatedItem">https://techlib.cz/vocabulary/datacite/RelatedItem</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Related item</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Information about a resource related to the one being registered.</td>
+                </tr>
+              </table>
+            </section>
+              <section id="Geo-location-point">
+              <h4>Geo location point</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/GeoLocationPoint">https://techlib.cz/vocabulary/datacite/GeoLocationPoint</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Geo location point</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>A point location in space.</td>
+                </tr>
+              </table>
+            </section>
+              <section id="Geo-location-box">
+              <h4>Geo location box</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/GeoLocationBox">https://techlib.cz/vocabulary/datacite/GeoLocationBox</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Geo location box</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The spatial limits of a box.</td>
+                </tr>
+              </table>
+            </section>
+              <section id="Geo-location-polygon">
+              <h4>Geo location polygon</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/GeoLocationPolygon">https://techlib.cz/vocabulary/datacite/GeoLocationPolygon</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Geo location polygon</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>A drawn polygon area, defined by a set of points and lines connecting the points in a closed chain.</td>
+                </tr>
+              </table>
+            </section>
+              <section id="Funder-identifier">
+              <h4>Funder identifier</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/FunderIdentifier">https://techlib.cz/vocabulary/datacite/FunderIdentifier</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Funder identifier</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Uniquely identifies a funding entity, according to various types.</td>
+                </tr>
+              </table>
+            </section>
+
+
+        <h2>Properties</h2>
+            <section id="publication-year">
+
+              <h4>publication year</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/publicationYear">https://techlib.cz/vocabulary/datacite/publicationYear</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>publication year</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The year when the data was or will be made publicly available. In the case of resources such as software or dynamic data where there may be multiple releases in one year, include the Date property and sub-properties (dateType/dateInformation) to provide more information about the publication or release date details.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Resource">Resource</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#date">xsd:date</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="identifier">
+
+              <h4>identifier</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/identifier">https://techlib.cz/vocabulary/datacite/identifier</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>identifier</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The Identifier is a unique string that identifies a resource. In DataCite, this MUST be a DIgital Object Identifier (DOI). The format should be 10.21384/foo.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Resource">Resource</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="title">
+
+              <h4>title</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/title">https://techlib.cz/vocabulary/datacite/title</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>title</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>A name or title by which a resource is known. May be the title of a dataset or the name of a piece of software or an instrument.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Resource">Resource</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="alternative-title">
+
+              <h4>alternative title</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/alternativeTitle">https://techlib.cz/vocabulary/datacite/alternativeTitle</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>alternative title</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Resource">Resource</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="subtitle">
+
+              <h4>subtitle</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/subtitle">https://techlib.cz/vocabulary/datacite/subtitle</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>subtitle</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Resource">Resource</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="translated-title">
+
+              <h4>translated title</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/translatedTitle">https://techlib.cz/vocabulary/datacite/translatedTitle</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>translated title</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Resource">Resource</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="other">
+
+              <h4>other</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/other">https://techlib.cz/vocabulary/datacite/other</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>other</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Resource">Resource</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="date-value">
+
+              <h4>date value</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/dateValue">https://techlib.cz/vocabulary/datacite/dateValue</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>date value</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Specific date.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Date">Date</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#date">xsd:date</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="date-type">
+
+              <h4>date type</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/dateType">https://techlib.cz/vocabulary/datacite/dateType</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>date type</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The type of date.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Date">Date</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="date-information">
+
+              <h4>date information</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/dateInformation">https://techlib.cz/vocabulary/datacite/dateInformation</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>date information</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Specific information about the date, if appropriate.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Date">Date</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="has-creator">
+
+              <h4>has creator</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/hasCreator">https://techlib.cz/vocabulary/datacite/hasCreator</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>has creator</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Resource">Resource</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="#Creator">Creator</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="has-date">
+
+              <h4>has date</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/hasDate">https://techlib.cz/vocabulary/datacite/hasDate</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>has date</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Resource">Resource</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="#Date">Date</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="has-contributor">
+
+              <h4>has contributor</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/hasContributor">https://techlib.cz/vocabulary/datacite/hasContributor</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>has contributor</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Resource">Resource</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="#Contributor">Contributor</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="has-publisher">
+
+              <h4>has publisher</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/hasPublisher">https://techlib.cz/vocabulary/datacite/hasPublisher</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>has publisher</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Resource">Resource</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="#Publisher">Publisher</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="language">
+
+              <h4>language</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/language">https://techlib.cz/vocabulary/datacite/language</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>language</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The primary language of the resource.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Resource">Resource</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="resource-type">
+
+              <h4>resource type</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/resourceType">https://techlib.cz/vocabulary/datacite/resourceType</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>resource type</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>A description of the resource. Gets the value from controlled list https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/resourceTypeGeneral/.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Resource">Resource</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="has-alternate-identifier">
+
+              <h4>has alternate identifier</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/hasAlternateIdentifier">https://techlib.cz/vocabulary/datacite/hasAlternateIdentifier</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>has alternate identifier</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Resource">Resource</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="#Alternate-identifier">Alternate identifier</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="alternate-identifier-type">
+
+              <h4>alternate identifier type</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/alternateIdentifierType">https://techlib.cz/vocabulary/datacite/alternateIdentifierType</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>alternate identifier type</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The type of the Alternate identifier.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Alternate-identifier">Alternate identifier</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="has-related-identifier">
+
+              <h4>has related identifier</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/hasRelatedIdentifier">https://techlib.cz/vocabulary/datacite/hasRelatedIdentifier</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>has related identifier</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Resource">Resource</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="#Related-identifier">Related identifier</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="related-identifier-type">
+
+              <h4>related identifier type</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/relatedIdentifierType">https://techlib.cz/vocabulary/datacite/relatedIdentifierType</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>related identifier type</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The type of the RelatedIdentifier. Value from controlled list https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/relatedIdentifierType/.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Related-identifier">Related identifier</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="relation-type">
+
+              <h4>relation type</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/relatedIdentifierRelationType">https://techlib.cz/vocabulary/datacite/relatedIdentifierRelationType</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>relation type</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Description of the relationship of the resource being registered (A) and the related resource (B). Value from controlled vocabulary https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/relationType/.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Related-identifier">Related identifier</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="related-metadata-scheme">
+
+              <h4>related metadata scheme</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/relatedMetadataScheme">https://techlib.cz/vocabulary/datacite/relatedMetadataScheme</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>related metadata scheme</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The name of the scheme. Use only with hasMetadata or IsMetadataFor relation type.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Related-identifier">Related identifier</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="related-identifier-scheme-URI">
+
+              <h4>related identifier scheme URI</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/relatedIdentifierSchemeUri">https://techlib.cz/vocabulary/datacite/relatedIdentifierSchemeUri</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>related identifier scheme URI</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td> The URI of the relatedMetadataScheme. The name of the scheme. Use only with hasMetadata or IsMetadataFor relation type.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Related-identifier">Related identifier</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="related-identifier-scheme-type">
+
+              <h4>related identifier scheme type</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/relatedIdentifierSchemeType">https://techlib.cz/vocabulary/datacite/relatedIdentifierSchemeType</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>related identifier scheme type</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The type of the relatedMetadataScheme, linked with the schemeURI.  Use only with hasMetadata or IsMetadataFor relation type.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Related-identifier">Related identifier</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="resource-type-general">
+
+              <h4>resource type general</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/resourceTypeGeneral">https://techlib.cz/vocabulary/datacite/resourceTypeGeneral</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>resource type general</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The general type of the related resource. Value from controlled list https://datacite-metadata-schema.readthedocs.io/en/4.6/properties/resourcetype/#a.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Related-identifier">Related identifier</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="size">
+
+              <h4>size</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/size">https://techlib.cz/vocabulary/datacite/size</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>size</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Size (e.g., bytes, pages, inches, etc.) or duration (extent), e.g., hours, minutes, days, etc., of a resource.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Resource">Resource</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="format">
+
+              <h4>format</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/format">https://techlib.cz/vocabulary/datacite/format</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>format</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Technical format of the resource.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Resource">Resource</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="version">
+
+              <h4>version</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/tenderLevel">https://techlib.cz/vocabulary/datacite/tenderLevel</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>version</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The version number of the resource.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Resource">Resource</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="has-version">
+
+              <h4>has version</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/hasVersion">https://techlib.cz/vocabulary/datacite/hasVersion</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>has version</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Resource">Resource</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="#Rights">Rights</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="rights-URI">
+
+              <h4>rights URI</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/rightsUri">https://techlib.cz/vocabulary/datacite/rightsUri</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>rights URI</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The URI of the license.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Rights">Rights</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="rights-identifier">
+
+              <h4>rights identifier</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/rightsIdentifier">https://techlib.cz/vocabulary/datacite/rightsIdentifier</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>rights identifier</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>A short, standardized version of the license name.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Rights">Rights</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="rights-identifier-scheme">
+
+              <h4>rights identifier scheme</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/rightsIdentifierScheme">https://techlib.cz/vocabulary/datacite/rightsIdentifierScheme</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>rights identifier scheme</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The name of the scheme.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Rights">Rights</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="rights-scheme-URI">
+
+              <h4>rights scheme URI</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/rightsSchemeUri">https://techlib.cz/vocabulary/datacite/rightsSchemeUri</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>rights scheme URI</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The URI of the rightsIdentifierScheme.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Rights">Rights</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="has-description">
+
+              <h4>has description</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/hasDescription">https://techlib.cz/vocabulary/datacite/hasDescription</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>has description</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Resource">Resource</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="#Description">Description</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="description-text">
+
+              <h4>description text</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/descriptionText">https://techlib.cz/vocabulary/datacite/descriptionText</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>description text</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Text describing the resource.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Description">Description</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="description-type">
+
+              <h4>description type</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/descriptionType">https://techlib.cz/vocabulary/datacite/descriptionType</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>description type</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The type of the Description. Value from controlled list https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/descriptionType/.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Description">Description</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="has-geolocation">
+
+              <h4>has geolocation</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/hasGeolocation">https://techlib.cz/vocabulary/datacite/hasGeolocation</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>has geolocation</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Resource">Resource</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="#GeoLocation">GeoLocation</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="has-funding-reference">
+
+              <h4>has funding reference</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/hasFundingReference">https://techlib.cz/vocabulary/datacite/hasFundingReference</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>has funding reference</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Resource">Resource</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="#Funding-reference">Funding reference</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="has-related-item">
+
+              <h4>has related item</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/hasRelatedItem">https://techlib.cz/vocabulary/datacite/hasRelatedItem</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>has related item</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Resource">Resource</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="#Related-item">Related item</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="related-item-type">
+
+              <h4>related item type</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/relatedItemType">https://techlib.cz/vocabulary/datacite/relatedItemType</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>related item type</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The general type of the related item. Value from controlled list https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/resourceTypeGeneral/.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Related-item">Related item</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="relation-type">
+
+              <h4>relation type</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/relatedItemRelationType">https://techlib.cz/vocabulary/datacite/relatedItemRelationType</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>relation type</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Description of the relationship of the resource being registered (A) and the related item (B). Value from controlled list https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/relationType/.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Related-item">Related item</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="has-creator">
+
+              <h4>has creator</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/relatedItemHasCreator">https://techlib.cz/vocabulary/datacite/relatedItemHasCreator</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>has creator</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The institution or person responsible for creating the related resource.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Related-item">Related item</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="#Creator">Creator</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="related-item-identifier">
+
+              <h4>related item identifier</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/relatedItemIdentifier">https://techlib.cz/vocabulary/datacite/relatedItemIdentifier</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>related item identifier</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The identifier for the related item.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Related-item">Related item</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="#Related-identifier">Related identifier</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="title">
+
+              <h4>title</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/relatedItemTitle">https://techlib.cz/vocabulary/datacite/relatedItemTitle</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>title</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Title of the related item.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Related-item">Related item</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="publication-year">
+
+              <h4>publication year</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/relatedItemPublicationYear">https://techlib.cz/vocabulary/datacite/relatedItemPublicationYear</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>publication year</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The year when the item was or will be made publicly available.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Related-item">Related item</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#date">xsd:date</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="volume">
+
+              <h4>volume</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/volume">https://techlib.cz/vocabulary/datacite/volume</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>volume</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Volume of the related item.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Related-item">Related item</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="issue">
+
+              <h4>issue</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/issue">https://techlib.cz/vocabulary/datacite/issue</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>issue</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Issue number or name of the related item.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Related-item">Related item</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="number">
+
+              <h4>number</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/number">https://techlib.cz/vocabulary/datacite/number</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>number</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Number of the resource within the related item, e.g., report number or article number.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Related-item">Related item</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="first-page">
+
+              <h4>first page</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/firstPage">https://techlib.cz/vocabulary/datacite/firstPage</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>first page</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>First page of the resource within the related item, e.g., of the chapter, article, or conference paper in proceedings.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Related-item">Related item</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="last-page">
+
+              <h4>last page</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/lastPage">https://techlib.cz/vocabulary/datacite/lastPage</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>last page</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Last page of the resource within the related item, e.g., of the chapter, article, or conference paper in proceedings.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Related-item">Related item</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="publisher">
+
+              <h4>publisher</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/relatedItemPublisher">https://techlib.cz/vocabulary/datacite/relatedItemPublisher</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>publisher</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The name of the entity that holds, archives, publishes prints, distributes, releases, issues, or produces the resource.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Related-item">Related item</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="edition">
+
+              <h4>edition</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/edition">https://techlib.cz/vocabulary/datacite/edition</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>edition</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Edition or version of the related item.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Related-item">Related item</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="related-item-contributor">
+
+              <h4>related item contributor</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/relatedItemContributor">https://techlib.cz/vocabulary/datacite/relatedItemContributor</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>related item contributor</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>An institution or person identified as contributing to the development of the resource. If multiple contributors are identified, this sub-property may be repeated for each contributor.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Related-item">Related item</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="#Contributor">Contributor</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="has-subject">
+
+              <h4>has subject</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/hasSubject">https://techlib.cz/vocabulary/datacite/hasSubject</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>has subject</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Resource">Resource</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="#Subject">Subject</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="creator-name">
+
+              <h4>creator name</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/creatorName">https://techlib.cz/vocabulary/datacite/creatorName</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>creator name</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The full name of the creator.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Creator">Creator</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="creator-name-type">
+
+              <h4>creator name type</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/creatorNameType">https://techlib.cz/vocabulary/datacite/creatorNameType</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>creator name type</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The type of name. Allowed values are Organizational and Personal.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Creator">Creator</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="creator-given-name">
+
+              <h4>creator given name</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/creatorGivenName">https://techlib.cz/vocabulary/datacite/creatorGivenName</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>creator given name</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The personal or first name of the creator.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Creator">Creator</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="creator-family-name">
+
+              <h4>creator family name</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/creatorFamilyName">https://techlib.cz/vocabulary/datacite/creatorFamilyName</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>creator family name</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The surname or last name of the creator.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Creator">Creator</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="creator-name-identifier">
+
+              <h4>creator name identifier</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/creatorNameIdentifier">https://techlib.cz/vocabulary/datacite/creatorNameIdentifier</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>creator name identifier</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Uniquely identifies an individual or legal entity, according to various schemes.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Creator">Creator</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="creator-name-identifier-scheme">
+
+              <h4>creator name identifier scheme</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/creatorNameIdentifierScheme">https://techlib.cz/vocabulary/datacite/creatorNameIdentifierScheme</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>creator name identifier scheme</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The name of the name identifier scheme.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Creator">Creator</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="creator-name-scheme-URI">
+
+              <h4>creator name scheme URI</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/creatorNameIdentifierSchemeUri">https://techlib.cz/vocabulary/datacite/creatorNameIdentifierSchemeUri</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>creator name scheme URI</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The URI of the name identifier scheme.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Creator">Creator</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="creator-affiliation">
+
+              <h4>creator affiliation</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/creator affiliation">https://techlib.cz/vocabulary/datacite/creator affiliation</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>creator affiliation</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The organizational or institutional affiliation of the creator.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Creator">Creator</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="creator-affilitation-identifier">
+
+              <h4>creator affilitation identifier</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/affilitationIdentifier">https://techlib.cz/vocabulary/datacite/affilitationIdentifier</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>creator affilitation identifier</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Uniquely identifies the organizational affiliation of the creator.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Creator">Creator</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="creator-affiliation-identifier-scheme">
+
+              <h4>creator affiliation identifier scheme</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/affiliationIdentifierScheme">https://techlib.cz/vocabulary/datacite/affiliationIdentifierScheme</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>creator affiliation identifier scheme</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The name of the affiliation identifier scheme</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Creator">Creator</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="creator-scheme-URI">
+
+              <h4>creator scheme URI</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/creatorAffiliationIdentifierSchemeUri">https://techlib.cz/vocabulary/datacite/creatorAffiliationIdentifierSchemeUri</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>creator scheme URI</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The URI of the affiliation identifier scheme.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Creator">Creator</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="publisher-identifier">
+
+              <h4>publisher identifier</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/publisherIdentifier">https://techlib.cz/vocabulary/datacite/publisherIdentifier</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>publisher identifier</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Uniquely identifies the publisher, according to various schemes.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Publisher">Publisher</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="publisher-identifier-scheme">
+
+              <h4>publisher identifier scheme</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/publisherIdentifierScheme">https://techlib.cz/vocabulary/datacite/publisherIdentifierScheme</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>publisher identifier scheme</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The name of the publisher identifier scheme.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Publisher">Publisher</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="publisher-scheme-URI">
+
+              <h4>publisher scheme URI</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/publisherIdentifierSchemeUri">https://techlib.cz/vocabulary/datacite/publisherIdentifierSchemeUri</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>publisher scheme URI</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The URI of the publisher identifier scheme.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Publisher">Publisher</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="contributor-type">
+
+              <h4>contributor type</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/contributorType">https://techlib.cz/vocabulary/datacite/contributorType</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>contributor type</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The type of contributor of the resource. Value from controlled list https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/contributorType/.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Contributor">Contributor</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="contributor-name">
+
+              <h4>contributor name</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/contributorName">https://techlib.cz/vocabulary/datacite/contributorName</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>contributor name</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The full name of the contributor.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Contributor">Contributor</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="contributor-name-type">
+
+              <h4>contributor name type</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/contributorNameType">https://techlib.cz/vocabulary/datacite/contributorNameType</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>contributor name type</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The type of name. Allowed values are Organizational and Personal.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Contributor">Contributor</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="contributor-given-name">
+
+              <h4>contributor given name</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/contributorGivenName">https://techlib.cz/vocabulary/datacite/contributorGivenName</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>contributor given name</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The personal or first name of the contributor.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Contributor">Contributor</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="contributor-family-name">
+
+              <h4>contributor family name</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/contributorFamilyName">https://techlib.cz/vocabulary/datacite/contributorFamilyName</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>contributor family name</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The surname or last name of the contributor.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Contributor">Contributor</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="contributor-name-identifier">
+
+              <h4>contributor name identifier</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/contirbutorNameIdentifier">https://techlib.cz/vocabulary/datacite/contirbutorNameIdentifier</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>contributor name identifier</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Uniquely identifies an individual or legal entity, according to various schemes.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Contributor">Contributor</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="contributor-name-identifier-scheme">
+
+              <h4>contributor name identifier scheme</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/contributorNameIdentifierScheme">https://techlib.cz/vocabulary/datacite/contributorNameIdentifierScheme</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>contributor name identifier scheme</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The name of the name identifier scheme.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Contributor">Contributor</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="contributor-name-scheme-URI">
+
+              <h4>contributor name scheme URI</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/contributorNameSchemeUri">https://techlib.cz/vocabulary/datacite/contributorNameSchemeUri</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>contributor name scheme URI</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The URI of the name identifier scheme.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Contributor">Contributor</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="contributor-affiliation">
+
+              <h4>contributor affiliation</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/contributorAffiliation">https://techlib.cz/vocabulary/datacite/contributorAffiliation</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>contributor affiliation</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The organizational or institutional affiliation of the contributor.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Contributor">Contributor</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="contributor-affiliation-identifier-scheme">
+
+              <h4>contributor affiliation identifier scheme</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/contributorAffiliationIdentifierScheme">https://techlib.cz/vocabulary/datacite/contributorAffiliationIdentifierScheme</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>contributor affiliation identifier scheme</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The name of the affiliation identifier scheme.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Contributor">Contributor</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="contributor-affiliation-scheme-URI">
+
+              <h4>contributor affiliation scheme URI</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/contributorAffiliationSchemeUri">https://techlib.cz/vocabulary/datacite/contributorAffiliationSchemeUri</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>contributor affiliation scheme URI</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>URI of the affiliation identifier scheme.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Contributor">Contributor</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="subject-scheme">
+
+              <h4>subject scheme</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/subjectScheme">https://techlib.cz/vocabulary/datacite/subjectScheme</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>subject scheme</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The name of the subject scheme or classification code or authority if one is used.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Subject">Subject</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="subject-scheme-URI">
+
+              <h4>subject scheme URI</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/subjectSchemeUri">https://techlib.cz/vocabulary/datacite/subjectSchemeUri</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>subject scheme URI</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The URI of the subject identifier scheme.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Subject">Subject</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="subject-value-URI">
+
+              <h4>subject value URI</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/subjectValueUri">https://techlib.cz/vocabulary/datacite/subjectValueUri</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>subject value URI</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The URI of the subject term.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Subject">Subject</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="subject-classification-code">
+
+              <h4>subject classification code</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/subjectClassificationCode">https://techlib.cz/vocabulary/datacite/subjectClassificationCode</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>subject classification code</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The classification code used for the subject term in the subject scheme.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Subject">Subject</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="has-geo-location-point">
+
+              <h4>has geo location point</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/hasGeoLocationPoint">https://techlib.cz/vocabulary/datacite/hasGeoLocationPoint</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>has geo location point</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#GeoLocation">GeoLocation</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="#Geo-location-point">Geo location point</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="point-longitude">
+
+              <h4>point longitude</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/pointLongitude">https://techlib.cz/vocabulary/datacite/pointLongitude</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>point longitude</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Longitudinal dimension of point.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Geo-location-point">Geo location point</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#decimal">xsd:decimal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="point-latitude">
+
+              <h4>point latitude</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/pointLatitude">https://techlib.cz/vocabulary/datacite/pointLatitude</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>point latitude</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Latitudinal dimension of point.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Geo-location-point">Geo location point</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#decimal">xsd:decimal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="west-bound-longitude">
+
+              <h4>west bound longitude</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/westBoundLongitude">https://techlib.cz/vocabulary/datacite/westBoundLongitude</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>west bound longitude</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Western longitudinal dimension of box.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Geo-location-box">Geo location box</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#decimal">xsd:decimal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="east-bound-longitude">
+
+              <h4>east bound longitude</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/eastBoundLongitude">https://techlib.cz/vocabulary/datacite/eastBoundLongitude</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>east bound longitude</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Eastern longitudinal dimension of box.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Geo-location-box">Geo location box</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#decimal">xsd:decimal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="south-bound-latitude">
+
+              <h4>south bound latitude</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/southBoundLatitude">https://techlib.cz/vocabulary/datacite/southBoundLatitude</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>south bound latitude</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Southern latitudinal dimension of box.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Geo-location-box">Geo location box</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#decimal">xsd:decimal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="north-bound-latitude">
+
+              <h4>north bound latitude</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/northBoundLatitude">https://techlib.cz/vocabulary/datacite/northBoundLatitude</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>north bound latitude</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Northern latitudinal dimension of box.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Geo-location-box">Geo location box</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#decimal">xsd:decimal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="has-geo-location-box">
+
+              <h4>has geo location box</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/hasGeoLocationBox">https://techlib.cz/vocabulary/datacite/hasGeoLocationBox</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>has geo location box</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#GeoLocation">GeoLocation</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="#Geo-location-box">Geo location box</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="geo-location-place">
+
+              <h4>geo location place</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/geoLocationPlace">https://techlib.cz/vocabulary/datacite/geoLocationPlace</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>geo location place</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Description of a geographic location.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#GeoLocation">GeoLocation</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="has-geo-location-polygon">
+
+              <h4>has geo location polygon</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/hasGeoLocationPolygon">https://techlib.cz/vocabulary/datacite/hasGeoLocationPolygon</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>has geo location polygon</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#GeoLocation">GeoLocation</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="#Geo-location-polygon">Geo location polygon</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="polygon-consist-of-point">
+
+              <h4>polygon consist of point</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/polygonConsistOfPoint">https://techlib.cz/vocabulary/datacite/polygonConsistOfPoint</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>polygon consist of point</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>A point location in a polygon.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Geo-location-polygon">Geo location polygon</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="#Geo-location-point">Geo location point</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="in-polygon-point">
+
+              <h4>in polygon point</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/inPolygonPoint">https://techlib.cz/vocabulary/datacite/inPolygonPoint</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>in polygon point</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>For any bound area that is larger than half the earth, define a (random) point inside. </td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Geo-location-polygon">Geo location polygon</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="#Geo-location-point">Geo location point</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="funder-name-">
+
+              <h4>funder name </h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/funderName">https://techlib.cz/vocabulary/datacite/funderName</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>funder name </td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Name of the funding provider.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Funding-reference">Funding reference</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="funder-identifier-type">
+
+              <h4>funder identifier type</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/funderIdentifierType">https://techlib.cz/vocabulary/datacite/funderIdentifierType</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>funder identifier type</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The type of the funderIdentifier.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Funder-identifier">Funder identifier</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="funder-identifier-scheme-URI">
+
+              <h4>funder identifier scheme URI</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/funderIdentifierSchemeUri">https://techlib.cz/vocabulary/datacite/funderIdentifierSchemeUri</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>funder identifier scheme URI</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The URI of the funder identifier scheme.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Funder-identifier">Funder identifier</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="has-funder-identifier">
+
+              <h4>has funder identifier</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/hasFunderIdentifier">https://techlib.cz/vocabulary/datacite/hasFunderIdentifier</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>has funder identifier</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Funding-reference">Funding reference</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="#Funder-identifier">Funder identifier</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="award-number">
+
+              <h4>award number</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/awardNumber">https://techlib.cz/vocabulary/datacite/awardNumber</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>award number</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The code assigned by the funder to a sponsored award (grant).</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Funding-reference">Funding reference</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="award-title">
+
+              <h4>award title</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/awardTitle">https://techlib.cz/vocabulary/datacite/awardTitle</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>award title</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The human readable title or name of the award (grant).</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Funding-reference">Funding reference</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="award-URI">
+
+              <h4>award URI</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/vocabulary/datacite/awardUri">https://techlib.cz/vocabulary/datacite/awardUri</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>award URI</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>The URI leading to a page provided by the funder for more information about the award (grant).</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="#Funding-reference">Funding reference</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+
+      </section>
+
+      <section>
+        <h1>Used prefixes</h1>
+        <table id="table-namespaces" class="simple">
+          <thead><tr><th>Prefix</th><th>Namespace IRI</th></tr></thead>
+          <tbody>
+              <tr><td><code>xsd</code></td><td><a href=http://www.w3.org/2001/XMLSchema#><code>http://www.w3.org/2001/XMLSchema#</code></a></td></tr>
+              <tr><td><code>rdfs</code></td><td><a href=http://www.w3.org/2000/01/rdf-schema#><code>http://www.w3.org/2000/01/rdf-schema#</code></a></td></tr>
+              <tr><td><code>rdf</code></td><td><a href=http://www.w3.org/1999/02/22-rdf-syntax-ns#><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></a></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h1>Attachments</h1>
+        <table class="def">
+            <tr>
+              <td>Vocabulary</td>
+              <td><a href="./model.owl.ttl">./model.owl.ttl</a></td>
+            </tr>
+            <tr>
+              <td>Application profile</td>
+              <td><a href="./dsv.ttl">./dsv.ttl</a></td>
+            </tr>
+        </table>
+      </section>
+
+    <style>
+      table.simple {
+        margin: auto;
+        border-spacing: 0;
+        border-collapse: collapse;
+      }
+
+      table.simple th {
+        padding: 3px 10px;
+        text-align: left;
+      }
+
+      table.simple td {
+        border-top: 1px solid #ddd;
+        padding: 3px 10px;
+      }
+    </style>
+    </body>
+  </html>
