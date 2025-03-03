@@ -143,7 +143,7 @@
     rdfs:isDefinedBy <https://techlib.cz/vocabulary/datacite/>;
     rdfs:domain :Creator;
     rdfs:range rdfs:Literal.
-<https://techlib.cz/vocabulary/datacite/creator affiliation> a rdf:Property, owl:DatatypeProperty;
+:creatorAffiliation a rdf:Property, owl:DatatypeProperty;
     rdfs:label "creator affiliation"@en;
     rdfs:comment "The organizational or institutional affiliation of the creator."@en;
     rdfs:isDefinedBy <https://techlib.cz/vocabulary/datacite/>;
