@@ -287,7 +287,7 @@
     rdfs:domain :Resource;
     rdfs:range rdfs:Literal.
 :hasVersion a rdf:Property, owl:ObjectProperty;
-    rdfs:label "has version"@en;
+    rdfs:label "has rights"@en;
     rdfs:isDefinedBy <https://techlib.cz/vocabulary/datacite/>;
     rdfs:domain :Resource;
     rdfs:range :Rights.
