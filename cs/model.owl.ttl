@@ -144,7 +144,7 @@
     rdfs:isDefinedBy <https://model.ccmm.cz/vocabulary/datacite/concept#>;
     rdfs:domain :Creator;
     rdfs:range rdfs:Literal.
-<https://model.ccmm.cz/vocabulary/datacite/concept#creator affiliation> a rdf:Property, owl:DatatypeProperty;
+:creatorAffiliation a rdf:Property, owl:DatatypeProperty;
     rdfs:label "creator affiliation"@en;
     rdfs:comment "The organizational or institutional affiliation of the creator."@en;
     rdfs:isDefinedBy <https://model.ccmm.cz/vocabulary/datacite/concept#>;
