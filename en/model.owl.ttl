@@ -491,6 +491,12 @@
     rdfs:isDefinedBy <https://model.ccmm.cz/vocabulary/datacite#>;
     rdfs:domain :Description;
     rdfs:range <http://www.w3.org/2001/XMLSchema#anyURI>.
+:hasDescritpionType a rdf:Property, owl:ObjectProperty;
+    rdfs:label "has descritpion type"@en;
+    rdfs:comment "Relation to the type of the description."@en;
+    rdfs:isDefinedBy <https://model.ccmm.cz/vocabulary/datacite#>;
+    rdfs:domain :Description;
+    rdfs:range :DescriptionType.
 :Rights a owl:Class, rdfs:Class;
     rdfs:label "Rights"@en;
     rdfs:comment "Any rights information for this resource. The property may be repeated to record complex rights characteristics."@en;
@@ -519,6 +525,10 @@
     rdfs:isDefinedBy <https://model.ccmm.cz/vocabulary/datacite#>;
     rdfs:domain :Rights;
     rdfs:range rdfs:Literal.
+:DescriptionType a owl:Class, rdfs:Class;
+    rdfs:label "Description type"@en;
+    rdfs:comment "The type of the description."@en;
+    rdfs:isDefinedBy <https://model.ccmm.cz/vocabulary/datacite#>.
 :GeoLocationPolygon a owl:Class, rdfs:Class;
     rdfs:label "Geo location polygon"@en;
     rdfs:comment "A drawn polygon area, defined by a set of points and lines connecting the points in a closed chain."@en;
