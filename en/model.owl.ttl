@@ -491,8 +491,8 @@
     rdfs:isDefinedBy <https://model.ccmm.cz/vocabulary/datacite#>;
     rdfs:domain :Description;
     rdfs:range <http://www.w3.org/2001/XMLSchema#anyURI>.
-:hasDescritpionType a rdf:Property, owl:ObjectProperty;
-    rdfs:label "has descritpion type"@en;
+:hasDescriptionType a rdf:Property, owl:ObjectProperty;
+    rdfs:label "has description type"@en;
     rdfs:comment "Relation to the type of the description."@en;
     rdfs:isDefinedBy <https://model.ccmm.cz/vocabulary/datacite#>;
     rdfs:domain :Description;
